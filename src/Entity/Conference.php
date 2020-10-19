@@ -44,9 +44,9 @@ class Conference
         $this->comments = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->author;
+        return $this->country.' '.$this->year;
     }
 
     public function getId(): ?int
