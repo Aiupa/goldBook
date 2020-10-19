@@ -22,7 +22,7 @@ class Conference
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $city;
+    private $country;
 
     /**
      * @ORM\Column(type="string", length=4)
@@ -44,19 +44,24 @@ class Conference
         $this->comments = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->author;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCity(): ?string
+    public function getCountry(): ?string
     {
-        return $this->city;
+        return $this->country;
     }
 
-    public function setCity(string $city): self
+    public function setCountry(string $country): self
     {
-        $this->city = $city;
+        $this->country = $country;
 
         return $this;
     }
@@ -112,7 +117,7 @@ class Conference
                 $comment->setConference(null);
             }
         }
-
         return $this;
     }
+
 }
