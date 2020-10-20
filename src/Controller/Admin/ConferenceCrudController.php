@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Conference;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CountryField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 
 class ConferenceCrudController extends AbstractCrudController
@@ -19,7 +18,7 @@ class ConferenceCrudController extends AbstractCrudController
     {
         return [
             TextField::new('year'),
-            CountryField::new('country'),
+            TextField::new('city'),
             BooleanField::new('isInternational'),
         ];
     }
