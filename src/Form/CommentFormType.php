@@ -24,8 +24,8 @@ class CommentFormType extends AbstractType
             ->add('photoFilename', FileType::class, [
                 'label' => 'Une photo ?',
                 'required' => false,
-                'mapped' => 'false',
-                'constraints' => [ new Image(['maxSize' => '1024k'])
+                'mapped' => false,
+                'constraints' => [ new Image(['maxSize' => '4096k'])
             ],
             ])
             ->add('submit', SubmitType::class)
